@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projects - Jaeseong Lee</title>
+</head>
+<body>
+
+<div align="right">
+  <a href="index.html">Home (About Me)</a> | 
+  <b>Project</b> | 
+  <a href="index.html">Contact</a>
+</div>
+
+<br>
+<h1 align="center" style="color: #800000;">Academic Projects</h1>
+<br>
+
+<table width="100%">
+  <tr>
+    <td width="30%" valign="top" align="center">
+       <img src="https://via.placeholder.com/300x200?text=N-gram+Analysis" alt="N-gram Project" width="90%" style="border: 1px solid #ddd; border-radius: 10px;">
+    </td>
+    <td width="70%" valign="top" style="padding-left: 20px;">
+      <h3>1. Computational Analysis of <i>Jane Eyre</i> (N-gram)</h3>
+      <p>
+        <b>Course:</b> Computational English Linguistics (Prof. Ahn)<br>
+        <b>Tools:</b> R, Python<br>
+        <b>Description:</b>
+        This project analyzes the linguistic patterns in Charlotte Brontë's <i>Jane Eyre</i> using computational methods.
+      </p>
+    </td>
+  </tr>
+
+  <tr><td colspan="2"><br><hr style="border-top: 1px dashed #bbb;"><br></td></tr>
+
+  <tr>
+    <td width="30%" valign="top" align="center">
+       <img src="https://via.placeholder.com/300x200?text=Textbook+Design" alt="Textbook Design" width="90%" style="border: 1px solid #ddd; border-radius: 10px;">
+    </td>
+    <td width="70%" valign="top" style="padding-left: 20px;">
+      <h3>2. University English Textbook Design</h3>
+      <p>
+        <b>Role:</b> Layout & Cover Designer<br>
+        <b>Description:</b>
+        Collaborated with a professor to design a university-level English textbook.
+      </p>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
