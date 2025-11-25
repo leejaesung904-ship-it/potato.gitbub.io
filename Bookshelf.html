@@ -3,7 +3,7 @@
 <head>
 <title>Jaeseong's Bookshelf</title>
 <style>
-  /* 1. 메뉴바 스타일 (마우스 올리면 커지는 효과) */
+  /* [1] 메뉴바 스타일 (마우스 올리면 커지는 효과) */
   .menu-bar {
     text-align: right;
     padding: 20px;
@@ -22,50 +22,37 @@
     font-weight: bold;
     transform: scale(1.2); /* ⭐ 1.2배로 확 커짐 */
   }
-  .menu-bar b {            /* 현재 페이지(Project)는 이미 붉고 굵게 */
+  .menu-bar b {            /* 현재 페이지(Bookshelf)는 붉고 굵게 */
     color: #8C1515;
     font-size: 18px;
     font-weight: bold;
     margin: 0 10px;
   }
 
-  /* 2. 프로젝트 이미지 스타일 (잘리지 않게 비율 맞춤) */
-  .project-img {
-    width: 350px;        /* 너비 고정 */
-    height: 230px;       /* 높이 고정 */
-    object-fit: contain; /* ⭐ 사진 전체가 다 보이게 축소 (여백 발생 가능) */
-    background-color: #ffffff; /* 여백은 흰색으로 채움 */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-  .project-img:hover {
-    transform: scale(1.02); /* 이미지에 마우스 올리면 살짝 확대 */
-  }
-</style>
-<style>
-  /* 책장 느낌을 주는 스타일 */
+  /* [2] 책장 및 책 표지 스타일 */
   .shelf {
     border-bottom: 15px solid #8B4513; /* 갈색 책장 바닥 */
     padding-bottom: 10px;
     margin-bottom: 40px;
-    background-color: #f9f9f9; /* 책장 안쪽 배경 */
+    background-color: #f9f9f9;
   }
   
   .book-cover {
-    width: 150px;       /* 너비를 150px로 강제 고정 */
-    height: 220px;      /* 높이를 220px로 강제 고정 (세로 직사각형) */
-    object-fit: cover;  /* 이미지가 찌그러지지 않고 틀에 꽉 차게 (남는 부분은 잘림) */
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.3); /* 그림자 */
+    width: 150px;       /* 너비 150px 고정 */
+    height: 220px;      /* 높이 220px 고정 (세로 직사각형) */
+    object-fit: cover;  /* 이미지가 찌그러지지 않고 꽉 차게 */
+    
+    border: 1px solid #ddd;
+    border-radius: 5px; /* 모서리 살짝 둥글게 */
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2); /* 그림자 */
     transition: transform 0.2s;
-    cursor: pointer;    /* 마우스 손가락 모양 */
-    border-radius: 2px; /* 책 모서리를 아주 살짝 둥글게 */
+    cursor: pointer;
   }
   
   .book-cover:hover {
-    transform: scale(1.05); /* 마우스 올리면 살짝 커짐 */
+    transform: scale(1.05); /* 마우스 올리면 책 표지 살짝 확대 */
   }
+
   .book-title {
     font-size: 14px;
     font-weight: bold;
@@ -79,9 +66,10 @@
 </head>
 <body>
 
-<div align="right">
+<!-- 상단 메뉴바 -->
+<div class="menu-bar">
   <a href="index.html">Home</a> | 
-  <a href="Project.html">Project</a> | 
+  <a href="project.html">Academic Projects</a> | 
   <b>Bookshelf</b>
 </div>
 
@@ -94,11 +82,13 @@
 </p>
 <br><br>
 
+<!-- 책장 시작 -->
 <h3 style="padding-left: 5%;">📚 Literary Studies</h3>
 <div class="shelf">
   <table width="100%" cellpadding="10">
     <tr align="center" valign="bottom">
       
+      <!-- 책 1 -->
       <td width="20%">
         <a href="https://www.notion.so/여기에_프랑켄슈타인_주소" target="_blank">
           <img src="프랑켄슈타인.jpg" class="book-cover">
@@ -107,6 +97,7 @@
         <div class="book-author">Mary Shelley</div>
       </td>
 
+      <!-- 책 2 -->
       <td width="20%">
         <a href="https://www.notion.so/여기에_댈러웨이_주소" target="_blank">
           <img src="댈러웨이부인.png" class="book-cover">
@@ -115,6 +106,7 @@
         <div class="book-author">Virginia Woolf</div>
       </td>
 
+      <!-- 책 3 -->
       <td width="20%">
         <a href="https://wooded-broker-a0d.notion.site/13369653c7c881f1982ef1addef99c51?source=copy_link" target="_blank">
           <img src="1984.jpg" class="book-cover">
@@ -123,6 +115,7 @@
         <div class="book-author">George Orwell</div>
       </td>
 
+      <!-- 책 4 -->
       <td width="20%">
         <a href="https://wooded-broker-a0d.notion.site/2a269653c7c880b9a143f140e109ae45?source=copy_link" target="_blank">
           <img src="싯다르타.jpg" class="book-cover">
@@ -131,6 +124,7 @@
         <div class="book-author">Hermann Hesse</div>
       </td>
 
+      <!-- 빈 공간 -->
       <td width="20%">&nbsp;</td>
     </tr>
   </table>
@@ -140,6 +134,27 @@
 <p align="center" style="font-size: 12px; color: #888;">
   * Click on the book cover to read my review on Notion.
 </p>
+
+<!-- 하단 푸터 (슬림 & 꽉 찬 버전) -->
+<!-- padding: 30px 0; 부분의 숫자를 조절해서 두께를 변경할 수 있습니다 -->
+<div style="width: 100%; background-color: #8C1515; color: white; margin-top: 60px; font-family: Arial, sans-serif; text-align: center; padding: 30px 0;">
+  
+  <div style="font-weight: bold; margin-bottom: 8px; font-size: 15px;">
+    <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Home</a>
+    <a href="project.html" style="color: white; text-decoration: none; margin: 0 15px;">Academic Projects</a>
+    <a href="bookshelf.html" style="color: white; text-decoration: none; margin: 0 15px;">Bookshelf</a>
+    <a href="mailto:leejaesung904@gmail.com" style="color: white; text-decoration: none; margin: 0 15px;">Contact Me</a>
+  </div>
+
+  <hr style="border: 0; height: 1px; background-color: #B85656; width: 60%; margin: 8px auto;">
+
+  <div style="font-size: 11px; color: #E8Caca; line-height: 1.4;">
+    Department of English Language and Literature | College of Humanities, Kunsan National University
+    <br>
+    &copy; 2025 Jaeseong Lee. All Rights Reserved. Designed for Computational English Linguistics Course.
+  </div>
+
+</div>
 
 </body>
 </html>
