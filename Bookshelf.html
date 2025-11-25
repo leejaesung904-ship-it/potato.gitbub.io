@@ -3,6 +3,48 @@
 <head>
 <title>Jaeseong's Bookshelf</title>
 <style>
+  /* 1. 메뉴바 스타일 (마우스 올리면 커지는 효과) */
+  .menu-bar {
+    text-align: right;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  .menu-bar a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333;           /* 평소엔 진한 회색 */
+    font-size: 18px;
+    margin: 0 10px;
+    display: inline-block;
+    transition: all 0.2s;  /* 부드러운 애니메이션 */
+  }
+  .menu-bar a:hover {
+    color: #8C1515;        /* 붉은색으로 변경 */
+    font-weight: bold;
+    transform: scale(1.2); /* ⭐ 1.2배로 확 커짐 */
+  }
+  .menu-bar b {            /* 현재 페이지(Project)는 이미 붉고 굵게 */
+    color: #8C1515;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 10px;
+  }
+
+  /* 2. 프로젝트 이미지 스타일 (잘리지 않게 비율 맞춤) */
+  .project-img {
+    width: 350px;        /* 너비 고정 */
+    height: 230px;       /* 높이 고정 */
+    object-fit: contain; /* ⭐ 사진 전체가 다 보이게 축소 (여백 발생 가능) */
+    background-color: #ffffff; /* 여백은 흰색으로 채움 */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .project-img:hover {
+    transform: scale(1.02); /* 이미지에 마우스 올리면 살짝 확대 */
+  }
+</style>
+<style>
   /* 책장 느낌을 주는 스타일 */
   .shelf {
     border-bottom: 15px solid #8B4513; /* 갈색 책장 바닥 */
