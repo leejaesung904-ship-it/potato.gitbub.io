@@ -3,30 +3,51 @@
 <head>
 <title>Projects - Jaeseong Lee</title>
 <style>
-  /* 1. 프로젝트 이미지 스타일 */
-  .project-img {
-    width: 350px;       /* 너비 고정 */
-    height: 230px;      /* 높이 고정 */
-    
-    /* ⭐ 여기가 핵심 수정 포인트! ⭐ */
-    object-fit: contain; /* 사진이 잘리지 않고 비율 그대로 다 들어오게 함 */
-    background-color: #ffffff; /* 남는 여백은 흰색으로 깔끔하게 채움 */
-    
-    border: 1px solid #ddd;
-    border-radius: 10px; /* 둥근 모서리 */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* 그림자 */
-    transition: transform 0.2s; 
+  /* 1. 메뉴바 스타일 (마우스 올리면 커지는 효과) */
+  .menu-bar {
+    text-align: right;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  .menu-bar a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333;           /* 평소엔 진한 회색 */
+    font-size: 18px;
+    margin: 0 10px;
+    display: inline-block;
+    transition: all 0.2s;  /* 부드러운 애니메이션 */
+  }
+  .menu-bar a:hover {
+    color: #8C1515;        /* 붉은색으로 변경 */
+    font-weight: bold;
+    transform: scale(1.2); /* ⭐ 1.2배로 확 커짐 */
+  }
+  .menu-bar b {            /* 현재 페이지(Project)는 이미 붉고 굵게 */
+    color: #8C1515;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 10px;
   }
 
-  /* 2. 마우스 올리면 살짝 커지는 효과 */
+  /* 2. 프로젝트 이미지 스타일 (잘리지 않게 비율 맞춤) */
+  .project-img {
+    width: 350px;        /* 너비 고정 */
+    height: 230px;       /* 높이 고정 */
+    object-fit: contain; /* ⭐ 사진 전체가 다 보이게 축소 (여백 발생 가능) */
+    background-color: #ffffff; /* 여백은 흰색으로 채움 */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
   .project-img:hover {
-    transform: scale(1.02);
+    transform: scale(1.02); /* 이미지에 마우스 올리면 살짝 확대 */
   }
 </style>
 </head>
 <body>
 
-<div align="right">
+<div class="menu-bar">
   <a href="index.html">Home</a> | 
   <b>Project</b> | 
   <a href="Bookshelf.html">Bookshelf</a>
@@ -74,7 +95,7 @@
 
   <tr>
     <td width="30%" valign="top" align="center">
-       <img src="중간고사.svg" class="project-img" alt="Midterm Project">
+       <img src="중간고사.jpg" onerror="this.src='https://via.placeholder.com/350x230?text=Midterm+Project'" class="project-img" alt="Midterm Project">
     </td>
     <td width="70%" valign="top" style="padding-left: 20px;">
       <h3>3. <a href="midterm2025.html" target="_blank">Midterm: AI Theory & N-gram Analysis</a></h3>
@@ -99,8 +120,9 @@
 
 </table>
 
-  <div style="background-color: #8C1515; color: white; padding: 40px 0; margin-top: 80px; font-family: Arial, sans-serif;">
-  
+<br><br><br>
+
+<div style="background-color: #8C1515; color: white; padding: 40px 0; margin-top: 80px; font-family: Arial, sans-serif;">
   <table width="90%" align="center" style="max-width: 1000px;">
     <tr>
       <td width="25%" valign="top" style="padding-right: 20px;">
@@ -108,27 +130,22 @@
           Kunsan<br>National<br>University
         </h2>
       </td>
-
       <td width="75%" valign="top" style="border-left: 1px solid #B85656; padding-left: 30px;">
-        
         <div style="font-weight: bold; margin-bottom: 10px; font-size: 15px;">
           <a href="index.html" style="color: white; text-decoration: none; margin-right: 20px;">Home</a>
           <a href="project.html" style="color: white; text-decoration: none; margin-right: 20px;">Academic Projects</a>
           <a href="bookshelf.html" style="color: white; text-decoration: none; margin-right: 20px;">Bookshelf</a>
           <a href="mailto:leejaesung904@gmail.com" style="color: white; text-decoration: none;">Contact Me</a>
         </div>
-
         <div style="font-size: 12px; color: #E8Caca; line-height: 1.6;">
           Department of English Language and Literature<br>
           College of Humanities, Kunsan National University<br>
           <br>
           &copy; 2025 Jaeseong Lee. All Rights Reserved. Designed for Computational English Linguistics Course.
         </div>
-
       </td>
     </tr>
   </table>
-
 </div>
 
 </body>
