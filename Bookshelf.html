@@ -10,13 +10,19 @@
     margin-bottom: 40px;
     background-color: #f9f9f9; /* 책장 안쪽 배경 */
   }
+  
   .book-cover {
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.3); /* 책 그림자 */
-    transition: transform 0.2s; /* 마우스 올렸을 때 효과 */
-    cursor: pointer; /* 마우스 올리면 손가락 모양 */
+    width: 150px;       /* 너비를 150px로 강제 고정 */
+    height: 220px;      /* 높이를 220px로 강제 고정 (세로 직사각형) */
+    object-fit: cover;  /* 이미지가 찌그러지지 않고 틀에 꽉 차게 (남는 부분은 잘림) */
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3); /* 그림자 */
+    transition: transform 0.2s;
+    cursor: pointer;    /* 마우스 손가락 모양 */
+    border-radius: 2px; /* 책 모서리를 아주 살짝 둥글게 */
   }
+  
   .book-cover:hover {
-    transform: scale(1.05); /* 마우스 올리면 책이 살짝 커짐 */
+    transform: scale(1.05); /* 마우스 올리면 살짝 커짐 */
   }
   .book-title {
     font-size: 14px;
@@ -52,7 +58,7 @@
       
       <td width="20%">
         <a href="https://www.notion.so/여기에_프랑켄슈타인_주소" target="_blank">
-          <img src="프랑켄슈타인.jpg" width="120" class="book-cover">
+          <img src="프랑켄슈타인.jpg" class="book-cover">
         </a>
         <div class="book-title">Frankenstein</div>
         <div class="book-author">Mary Shelley</div>
@@ -60,7 +66,7 @@
 
       <td width="20%">
         <a href="https://www.notion.so/여기에_댈러웨이_주소" target="_blank">
-          <img src="댈러웨이부인.png" width="120" class="book-cover">
+          <img src="댈러웨이부인.png" class="book-cover">
         </a>
         <div class="book-title">Mrs. Dalloway</div>
         <div class="book-author">Virginia Woolf</div>
@@ -68,7 +74,7 @@
 
       <td width="20%">
         <a href="https://www.notion.so/여기에_1984_주소" target="_blank">
-          <img src="1984.png" width="120" class="book-cover">
+          <img src="1984.png" class="book-cover">
         </a>
         <div class="book-title">1984</div>
         <div class="book-author">George Orwell</div>
@@ -76,7 +82,7 @@
 
       <td width="20%">
         <a href="https://www.notion.so/여기에_싯다르타_주소" target="_blank">
-          <img src="싯다르타.jpg" width="120" class="book-cover">
+          <img src="싯다르타.jpg" class="book-cover">
         </a>
         <div class="book-title">Siddhartha</div>
         <div class="book-author">Hermann Hesse</div>
