@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home - Jaeseong Lee</title>
+<title>Projects - Jaeseong Lee</title>
 <style>
-  /* [1] 메뉴바 스타일 */
+  /* 1. 메뉴바 스타일 (마우스 올리면 커지는 효과) */
   .menu-bar {
     text-align: right;
     padding: 20px;
@@ -15,185 +15,138 @@
     font-size: 18px;
     margin: 0 10px;
     display: inline-block;
-    transition: all 0.2s;
+    transition: all 0.2s;  /* 부드러운 애니메이션 */
   }
   .menu-bar a:hover {
     color: #8C1515;        /* 붉은색으로 변경 */
     font-weight: bold;
-    transform: scale(1.2); /* 1.2배 확대 */
+    transform: scale(1.2); /* ⭐ 1.2배로 확 커짐 */
   }
-  .menu-bar b {            /* 현재 페이지(Home) */
+  .menu-bar b {            /* 현재 페이지(Project)는 이미 붉고 굵게 */
     color: #8C1515;
     font-size: 18px;
     font-weight: bold;
     margin: 0 10px;
   }
 
-  /* [2] 시간표 접기/펼치기 스타일 */
-  details > summary {
-    list-style: none;
-    cursor: pointer;
-    font-weight: bold;
-    color: #333;
-    transition: color 0.2s;
+  /* 2. 프로젝트 이미지 스타일 (잘리지 않게 비율 맞춤) */
+  .project-img {
+    width: 350px;        /* 너비 고정 */
+    height: 230px;       /* 높이 고정 */
+    object-fit: contain; /* ⭐ 사진 전체가 다 보이게 축소 (여백 발생 가능) */
+    background-color: #ffffff; /* 여백은 흰색으로 채움 */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
   }
-  details > summary::-webkit-details-marker {
-    display: none;
-  }
-  details > summary:hover {
-    color: #8C1515;
-  }
-
-  /* [3] ⭐ 모션 푸터 애니메이션 스타일 ⭐ */
-  #animated-footer {
-    opacity: 0;                    /* 처음엔 안 보임 */
-    width: 30%;                    /* 처음엔 폭이 좁음 */
-    transform: translateY(30px);   /* 아래쪽에 살짝 내려가 있음 */
-    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); /* 1.2초 동안 부드럽게 펴짐 */
-    
-    /* 기존 푸터 스타일 통합 */
-    background-color: #8C1515;
-    color: white;
-    margin: 60px auto 0 auto;      /* 가운데 정렬을 위해 auto 추가 */
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 30px 0;               /* 두께 유지 */
-  }
-
-  /* 스크롤이 도달했을 때 적용될 클래스 */
-  #animated-footer.show {
-    opacity: 1;           /* 선명해짐 */
-    width: 100%;          /* 화면 꽉 채움 */
-    transform: translateY(0); /* 제자리로 올라옴 */
+  .project-img:hover {
+    transform: scale(1.02); /* 이미지에 마우스 올리면 살짝 확대 */
   }
 </style>
 </head>
 <body>
 
 <div class="menu-bar">
-  <b>Home</b> | 
-  <a href="Project.html">Projects</a> | 
-  <a href="Bookshelf.html">Bookshelf</a>
+  <a href="index.html">Home</a> | 
+  <b>Project</b> | 
+  <a href="bookshelf.html">Bookshelf</a>
 </div>
 
 <br>
-
-<h1 align="center" style="color: #800000;">Jaeseong Lee</h1>
-
+<h1 align="center" style="color: #800000;">Academic Projects</h1>
 <br>
 
 <table width="100%">
+  
   <tr>
     <td width="30%" valign="top" align="center">
-      <img src="PICTURE.png" alt="Profile Picture" width="80%" style="border-radius: 40px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+       <img src="R.png" class="project-img" alt="R Project">
     </td>
-    
-    <td width="70%" valign="top" style="padding-left: 50px;">
-      <b>Undergraduate Student, Department of English Language and Literature, Kunsan National University</b>
-      <br><br>
-      My name is "Jaeseong". I created this website as part of Professor Ahn’s Computational English Linguistics course this semester.
-      <br>
-      My academic interests include English linguistics, literary studies, and AI-based language education.
-      <br>
-      Through this website, I hope to document my learning journey and share my projects.
-      <br>
-      I am still learning, but I’m excited to continue developing this website and expanding my academic portfolio.
-
-      <br><br>
-      mbti: isfj 
-      <br>
-      e-mail: leejaesung904@gmail.com
-      <br>
-      
-      <br>
-      <h3>Course Listing</h3> 
-      <details>
-        <summary>Fall 2025 (Click here)</summary>
-        
-        <br> 
-        <table border="1" style="border-collapse: collapse; width: 90%;">
-          <thead>
-            <tr style="background-color: #f2f2f2;">
-              <th style="padding: 8px; text-align: left;">Course Title</th>
-              <th style="padding: 8px; text-align: left;">Professor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 8px;">Computational English Linguistics</td>
-              <td style="padding: 8px;">Prof. Ahn</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px;">Understanding English Structure</td>
-              <td style="padding: 8px;">Prof. Cho</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px;">British and American Culture</td>
-              <td style="padding: 8px;">Prof. Han</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px;">History of English</td>
-              <td style="padding: 8px;">Prof. Park</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px;">English Grammar</td>
-              <td style="padding: 8px;">Prof. Cho</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px;">English Reading</td>
-              <td style="padding: 8px;">Prof. Cho</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </details>
-      
-      <br>
-      <a href="Timetable.pdf" target="_blank"><b>Fall 2025 Course Schedule</b> (pdf version)</a>
-      <br><br>
-
-      <h3>Reading Interests</h3>
-      <ul>
-        <li><i>Frankenstein; or, The Modern Prometheus</i> by Mary Shelley — Gothic Literature, Early Science Fiction</li>
-        <li><i>Mrs Dalloway</i> by Virginia Woolf — Modernism, Feminist Narratives</li>
-        <li><i>1984</i> by George Orwell — Dystopian Literature, Political Allegory, Totalitarianism</li>
-        <li><i>Animal Farm</i> by George Orwell — Political Satire, Allegory, Marxism</li>
-        <li><i>The Temple of the Golden Pavilion</i> by Yukio Mishima — Aestheticism, Existentialism, Psychological Fiction</li>
-      </ul>
-
+    <td width="70%" valign="top" style="padding-left: 20px;">
+      <h3>1. <a href="CompLing.html" target="_blank">My first R projects</a></h3>
+      <p>
+        <b>Course:</b> Computational English Linguistics (Prof. Ahn)<br>
+        <b>Tools:</b> R<br>
+        <b>Description:</b>
+        I focused on building a strong foundation in programming. This project documents my very first experience with coding. I learned how to set up the R environment and practiced basic syntax to understand how computers process language.
+      </p>
     </td>
   </tr>
+
+  <tr><td colspan="2"><br><hr style="border-top: 1px dashed #bbb;"><br></td></tr>
+
+  <tr>
+    <td width="30%" valign="top" align="center">
+       <img src="제인에어.webp" class="project-img" alt="Jane Eyre Analysis">
+    </td>
+    <td width="70%" valign="top" style="padding-left: 20px;">
+      <h3>2. <a href="Jane_Eyre.html" target="_blank">Computational Analysis of <i>Jane Eyre</i> (N-gram)</a></h3>
+      <p>
+        <b>Course:</b> Computational English Linguistics (Prof. Ahn)<br>
+        <b>Tools:</b> R<br>
+        <b>Description:</b>
+        This project analyzes the linguistic patterns in Charlotte Brontë's <i>Jane Eyre</i> using computational methods.
+      </p>
+    </td>
+  </tr>
+
+  <tr><td colspan="2"><br><hr style="border-top: 1px dashed #bbb;"><br></td></tr>
+
+  <tr>
+    <td width="30%" valign="top" align="center">
+       <img src="Midterm.png" onerror="this.src='https://via.placeholder.com/350x230?text=Midterm+Project'" class="project-img" alt="Midterm Project">
+    </td>
+    <td width="70%" valign="top" style="padding-left: 20px;">
+      <h3>3. <a href="midterm2025.html" target="_blank">Midterm: AI Theory & N-gram Analysis</a></h3>
+      <p>
+        <b>Course:</b> Computational English Linguistics (Prof. Ahn)<br>
+        <b>Topic:</b> Generative AI Concepts & Text Generation<br>
+        <b>Tools:</b> R (Packages: <code>ngram</code>, <code>tidyverse</code>, <code>gutenbergr</code>)<br>
+      </p>
+      <p>
+        This midterm project covers both the theoretical foundations of AI and practical text analysis.
+        I explored key concepts such as <b>Transformers, GPUs, and the Markov assumption</b>.
+        <br><br>
+        <b>Key Activities:</b>
+        <ul>
+            <li>Analyzed Lewis Carroll's <i>Alice's Adventures in Wonderland</i> using R.</li>
+            <li>Generated sentences using various N-gram models (Bigram to 30-gram).</li>
+            <li>Compared the trade-off between <b>grammatical accuracy</b> and <b>creativity</b> based on the value of N.</li>
+        </ul>
+      </p>
+    </td>
+  </tr>
+
 </table>
 
-<div id="animated-footer">
-  
-  <div style="font-weight: bold; margin-bottom: 8px; font-size: 15px;">
-    <span style="color: white; margin: 0 15px; opacity: 0.7;">Home</span>
-    <a href="Project.html" style="color: white; text-decoration: none; margin: 0 15px;">Projects</a>
-    <a href="Bookshelf.html" style="color: white; text-decoration: none; margin: 0 15px;">Bookshelf</a>
-    <a href="mailto:leejaesung904@gmail.com" style="color: white; text-decoration: none; margin: 0 15px;">Contact Me</a>
-  </div>
+<br><br><br>
 
-  <hr style="border: 0; height: 1px; background-color: #B85656; width: 60%; margin: 8px auto;">
-
-  <div style="font-size: 11px; color: #E8Caca; line-height: 1.4;">
-    Department of English Language and Literature | College of Humanities, Kunsan National University
-    <br>
-    &copy; 2025 Jaeseong Lee. All Rights Reserved. Designed for Computational English Linguistics Course.
-  </div>
-
+<div style="background-color: #8C1515; color: white; padding: 40px 0; margin-top: 80px; font-family: Arial, sans-serif;">
+  <table width="90%" align="center" style="max-width: 1000px;">
+    <tr>
+      <td width="25%" valign="top" style="padding-right: 20px;">
+        <h2 style="margin: 0; font-family: 'Times New Roman', serif; letter-spacing: -1px;">
+          Kunsan<br>National<br>University
+        </h2>
+      </td>
+      <td width="75%" valign="top" style="border-left: 1px solid #B85656; padding-left: 30px;">
+        <div style="font-weight: bold; margin-bottom: 10px; font-size: 15px;">
+          <a href="index.html" style="color: white; text-decoration: none; margin-right: 20px;">Home</a>
+          <a href="project.html" style="color: white; text-decoration: none; margin-right: 20px;">Academic Projects</a>
+          <a href="bookshelf.html" style="color: white; text-decoration: none; margin-right: 20px;">Bookshelf</a>
+          <a href="mailto:leejaesung904@gmail.com" style="color: white; text-decoration: none;">Contact Me</a>
+        </div>
+        <div style="font-size: 12px; color: #E8Caca; line-height: 1.6;">
+          Department of English Language and Literature<br>
+          College of Humanities, Kunsan National University<br>
+          <br>
+          &copy; 2025 Jaeseong Lee. All Rights Reserved. Designed for Computational English Linguistics Course.
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show'); // 화면에 보이면 'show' 클래스 추가
-      }
-    });
-  });
-  observer.observe(document.getElementById('animated-footer'));
-</script>
 
 </body>
 </html>
