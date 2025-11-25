@@ -3,7 +3,7 @@
 <head>
 <title>Projects - Jaeseong Lee</title>
 <style>
-  /* 1. 메뉴바 스타일 (마우스 올리면 커지는 효과) */
+  /* [1] 메뉴바 스타일 (마우스 올리면 커지고 붉어짐) */
   .menu-bar {
     text-align: right;
     padding: 20px;
@@ -15,33 +15,56 @@
     font-size: 18px;
     margin: 0 10px;
     display: inline-block;
-    transition: all 0.2s;  /* 부드러운 애니메이션 */
+    transition: all 0.2s;
   }
   .menu-bar a:hover {
     color: #8C1515;        /* 붉은색으로 변경 */
     font-weight: bold;
     transform: scale(1.2); /* ⭐ 1.2배로 확 커짐 */
   }
-  .menu-bar b {            /* 현재 페이지(Project)는 이미 붉고 굵게 */
+  .menu-bar b {            /* 현재 페이지(Project) */
     color: #8C1515;
     font-size: 18px;
     font-weight: bold;
     margin: 0 10px;
   }
 
-  /* 2. 프로젝트 이미지 스타일 (잘리지 않게 비율 맞춤) */
+  /* [2] 프로젝트 이미지 스타일 (비율 유지 + 여백 흰색) */
   .project-img {
     width: 350px;        /* 너비 고정 */
     height: 230px;       /* 높이 고정 */
-    object-fit: contain; /* ⭐ 사진 전체가 다 보이게 축소 (여백 발생 가능) */
-    background-color: #ffffff; /* 여백은 흰색으로 채움 */
+    object-fit: contain; /* ⭐ 사진이 잘리지 않고 다 보임 */
+    background-color: #ffffff; /* 남는 여백은 흰색으로 채움 */
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.2s;
   }
   .project-img:hover {
-    transform: scale(1.02); /* 이미지에 마우스 올리면 살짝 확대 */
+    transform: scale(1.02); /* 마우스 올리면 살짝 확대 */
+  }
+
+  /* [3] ⭐ 모션 푸터 애니메이션 스타일 ⭐ */
+  #animated-footer {
+    opacity: 0;                    /* 처음엔 안 보임 */
+    width: 30%;                    /* 처음엔 폭이 좁음 */
+    transform: translateY(30px);   /* 아래쪽에 살짝 내려가 있음 */
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); /* 1.2초 동안 촤르륵 펴짐 */
+    
+    /* 슬림 푸터 스타일 통합 */
+    background-color: #8C1515;
+    color: white;
+    margin: 60px auto 0 auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px 0;               /* 적당한 두께 */
+  }
+
+  /* 화면에 보일 때 적용될 클래스 */
+  #animated-footer.show {
+    opacity: 1;           
+    width: 100%;          /* 화면 꽉 채움 */
+    transform: translateY(0); 
   }
 </style>
 </head>
@@ -49,8 +72,8 @@
 
 <div class="menu-bar">
   <a href="index.html">Home</a> | 
-  <b>Project</b> | 
-  <a href="bookshelf.html">Bookshelf</a>
+  <b>Projects</b> | 
+  <a href="Bookshelf.html">Bookshelf</a>
 </div>
 
 <br>
@@ -81,7 +104,7 @@
        <img src="제인에어.webp" class="project-img" alt="Jane Eyre Analysis">
     </td>
     <td width="70%" valign="top" style="padding-left: 20px;">
-      <h3>2. <a href="Jane_Eyre.html" target="_blank">Computational Analysis of <i>Jane Eyre</i> (N-gram)</a></h3>
+      <h3>2. <a href="Jane Eyre.html" target="_blank">Computational Analysis of <i>Jane Eyre</i> (N-gram)</a></h3>
       <p>
         <b>Course:</b> Computational English Linguistics (Prof. Ahn)<br>
         <b>Tools:</b> R<br>
@@ -95,7 +118,7 @@
 
   <tr>
     <td width="30%" valign="top" align="center">
-       <img src="Midterm.png" onerror="this.src='https://via.placeholder.com/350x230?text=Midterm+Project'" class="project-img" alt="Midterm Project">
+       <img src="중간고사.svg" onerror="this.src='https://via.placeholder.com/350x230?text=Midterm+Project'" class="project-img" alt="Midterm Project">
     </td>
     <td width="70%" valign="top" style="padding-left: 20px;">
       <h3>3. <a href="midterm2025.html" target="_blank">Midterm: AI Theory & N-gram Analysis</a></h3>
@@ -122,31 +145,35 @@
 
 <br><br><br>
 
-<div style="background-color: #8C1515; color: white; padding: 40px 0; margin-top: 80px; font-family: Arial, sans-serif;">
-  <table width="90%" align="center" style="max-width: 1000px;">
-    <tr>
-      <td width="25%" valign="top" style="padding-right: 20px;">
-        <h2 style="margin: 0; font-family: 'Times New Roman', serif; letter-spacing: -1px;">
-          Kunsan<br>National<br>University
-        </h2>
-      </td>
-      <td width="75%" valign="top" style="border-left: 1px solid #B85656; padding-left: 30px;">
-        <div style="font-weight: bold; margin-bottom: 10px; font-size: 15px;">
-          <a href="index.html" style="color: white; text-decoration: none; margin-right: 20px;">Home</a>
-          <a href="project.html" style="color: white; text-decoration: none; margin-right: 20px;">Academic Projects</a>
-          <a href="bookshelf.html" style="color: white; text-decoration: none; margin-right: 20px;">Bookshelf</a>
-          <a href="mailto:leejaesung904@gmail.com" style="color: white; text-decoration: none;">Contact Me</a>
-        </div>
-        <div style="font-size: 12px; color: #E8Caca; line-height: 1.6;">
-          Department of English Language and Literature<br>
-          College of Humanities, Kunsan National University<br>
-          <br>
-          &copy; 2025 Jaeseong Lee. All Rights Reserved. Designed for Computational English Linguistics Course.
-        </div>
-      </td>
-    </tr>
-  </table>
+<div id="animated-footer">
+  
+  <div style="font-weight: bold; margin-bottom: 8px; font-size: 15px;">
+    <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Home</a>
+    <span style="color: white; margin: 0 15px; opacity: 0.7;">Projects</span>
+    <a href="Bookshelf.html" style="color: white; text-decoration: none; margin: 0 15px;">Bookshelf</a>
+    <a href="mailto:leejaesung904@gmail.com" style="color: white; text-decoration: none; margin: 0 15px;">Contact Me</a>
+  </div>
+
+  <hr style="border: 0; height: 1px; background-color: #B85656; width: 60%; margin: 8px auto;">
+
+  <div style="font-size: 11px; color: #E8Caca; line-height: 1.4;">
+    Department of English Language and Literature | College of Humanities, Kunsan National University
+    <br>
+    &copy; 2025 Jaeseong Lee. All Rights Reserved. Designed for Computational English Linguistics Course.
+  </div>
+
 </div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show'); // 화면에 보이면 'show' 클래스 추가
+      }
+    });
+  });
+  observer.observe(document.getElementById('animated-footer'));
+</script>
 
 </body>
 </html>
