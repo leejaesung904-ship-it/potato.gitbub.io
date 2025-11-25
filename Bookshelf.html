@@ -3,7 +3,7 @@
 <head>
 <title>Jaeseong's Bookshelf</title>
 <style>
-  /* [1] 메뉴바 스타일 (마우스 올리면 커지는 효과) */
+  /* [1] 메뉴바 스타일 */
   .menu-bar {
     text-align: right;
     padding: 20px;
@@ -15,14 +15,14 @@
     font-size: 18px;
     margin: 0 10px;
     display: inline-block;
-    transition: all 0.2s;  /* 부드러운 애니메이션 */
+    transition: all 0.2s;
   }
   .menu-bar a:hover {
     color: #8C1515;        /* 붉은색으로 변경 */
     font-weight: bold;
-    transform: scale(1.2); /* ⭐ 1.2배로 확 커짐 */
+    transform: scale(1.2); /* 1.2배 확대 */
   }
-  .menu-bar b {            /* 현재 페이지(Bookshelf)는 붉고 굵게 */
+  .menu-bar b {            /* 현재 페이지(Bookshelf) */
     color: #8C1515;
     font-size: 18px;
     font-weight: bold;
@@ -39,18 +39,18 @@
   
   .book-cover {
     width: 150px;       /* 너비 150px 고정 */
-    height: 220px;      /* 높이 220px 고정 (세로 직사각형) */
-    object-fit: cover;  /* 이미지가 찌그러지지 않고 꽉 차게 */
+    height: 220px;      /* 높이 220px 고정 */
+    object-fit: cover;  /* 이미지 꽉 차게 */
     
     border: 1px solid #ddd;
-    border-radius: 5px; /* 모서리 살짝 둥글게 */
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.2); /* 그림자 */
+    border-radius: 5px; 
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2); 
     transition: transform 0.2s;
     cursor: pointer;
   }
   
   .book-cover:hover {
-    transform: scale(1.05); /* 마우스 올리면 책 표지 살짝 확대 */
+    transform: scale(1.05); /* 마우스 올리면 확대 */
   }
 
   .book-title {
@@ -62,11 +62,33 @@
     font-size: 12px;
     color: #555;
   }
+
+  /* [3] ⭐ 모션 푸터 애니메이션 스타일 (이게 빠져 있었어요!) ⭐ */
+  #animated-footer {
+    opacity: 0;                    /* 처음엔 투명함 */
+    width: 30%;                    /* 처음엔 폭이 좁음 */
+    transform: translateY(30px);   /* 아래쪽에 숨어 있음 */
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); /* 1.2초 동안 부드럽게 펴짐 */
+    
+    /* 기존 푸터 디자인 */
+    background-color: #8C1515;
+    color: white;
+    margin: 60px auto 0 auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  /* 화면에 보일 때 적용될 클래스 */
+  #animated-footer.show {
+    opacity: 1;           /* 선명해짐 */
+    width: 100%;          /* 화면 꽉 채움 */
+    transform: translateY(0); /* 제자리로 올라옴 */
+  }
 </style>
 </head>
 <body>
 
-<!-- 상단 메뉴바 -->
 <div class="menu-bar">
   <a href="index.html">Home</a> | 
   <a href="Project.html">Projects</a> | 
@@ -82,13 +104,11 @@
 </p>
 <br><br>
 
-<!-- 책장 시작 -->
 <h3 style="padding-left: 5%;">📚 Literary Studies</h3>
 <div class="shelf">
   <table width="100%" cellpadding="10">
     <tr align="center" valign="bottom">
       
-      <!-- 책 1 -->
       <td width="20%">
         <a href="https://www.notion.so/여기에_프랑켄슈타인_주소" target="_blank">
           <img src="프랑켄슈타인.jpg" class="book-cover">
@@ -97,7 +117,6 @@
         <div class="book-author">Mary Shelley</div>
       </td>
 
-      <!-- 책 2 -->
       <td width="20%">
         <a href="https://www.notion.so/여기에_댈러웨이_주소" target="_blank">
           <img src="댈러웨이부인.png" class="book-cover">
@@ -106,7 +125,6 @@
         <div class="book-author">Virginia Woolf</div>
       </td>
 
-      <!-- 책 3 -->
       <td width="20%">
         <a href="https://wooded-broker-a0d.notion.site/13369653c7c881f1982ef1addef99c51?source=copy_link" target="_blank">
           <img src="1984.jpg" class="book-cover">
@@ -115,7 +133,6 @@
         <div class="book-author">George Orwell</div>
       </td>
 
-      <!-- 책 4 -->
       <td width="20%">
         <a href="https://wooded-broker-a0d.notion.site/2a269653c7c880b9a143f140e109ae45?source=copy_link" target="_blank">
           <img src="싯다르타.jpg" class="book-cover">
@@ -124,29 +141,22 @@
         <div class="book-author">Hermann Hesse</div>
       </td>
 
-      <!-- 빈 공간 -->
       <td width="20%">&nbsp;</td>
     </tr>
   </table>
 </div>
 
-  
 <br><br>
 <p align="center" style="font-size: 12px; color: #888;">
   * Click on the book cover to read my review on Notion.
 </p>
 
-
-
-  
-<!-- 하단 푸터 (슬림 & 꽉 찬 버전) -->
-<!-- padding: 30px 0; 부분의 숫자를 조절해서 두께를 변경할 수 있습니다 -->
 <div id="animated-footer">
   
   <div style="font-weight: bold; margin-bottom: 8px; font-size: 15px;">
     <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Home</a>
     <a href="Project.html" style="color: white; text-decoration: none; margin: 0 15px;">Projects</a>
-    <span style="color: white; margin: 0 15px; opacity: 0.7;">Bokkshelf</span>
+    <span style="color: white; margin: 0 15px; opacity: 0.7;">Bookshelf</span>
     <a href="mailto:leejaesung904@gmail.com" style="color: white; text-decoration: none; margin: 0 15px;">Contact Me</a>
   </div>
 
