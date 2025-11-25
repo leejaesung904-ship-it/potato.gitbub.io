@@ -3,7 +3,7 @@
 <head>
 <title>Home - Jaeseong Lee</title>
 <style>
-  /* [1] 메뉴바 스타일 (마우스 올리면 커지는 효과) */
+  /* [1] 메뉴바 스타일 */
   .menu-bar {
     text-align: right;
     padding: 20px;
@@ -15,33 +15,56 @@
     font-size: 18px;
     margin: 0 10px;
     display: inline-block;
-    transition: all 0.2s;  /* 부드러운 애니메이션 */
+    transition: all 0.2s;
   }
   .menu-bar a:hover {
     color: #8C1515;        /* 붉은색으로 변경 */
     font-weight: bold;
-    transform: scale(1.2); /* ⭐ 1.2배로 확 커짐 */
+    transform: scale(1.2); /* 1.2배 확대 */
   }
-  .menu-bar b {            /* 현재 페이지(Home)는 붉고 굵게 */
+  .menu-bar b {            /* 현재 페이지(Home) */
     color: #8C1515;
     font-size: 18px;
     font-weight: bold;
     margin: 0 10px;
   }
 
-  /* [2] 시간표 접기/펼치기 화살표 제거 및 스타일 */
+  /* [2] 시간표 접기/펼치기 스타일 */
   details > summary {
-    list-style: none;      /* 화살표 제거 (표준) */
-    cursor: pointer;       /* 손가락 모양 */
+    list-style: none;
+    cursor: pointer;
     font-weight: bold;
     color: #333;
     transition: color 0.2s;
   }
   details > summary::-webkit-details-marker {
-    display: none;         /* 크롬/사파리 화살표 제거 */
+    display: none;
   }
   details > summary:hover {
-    color: #8C1515;        /* 마우스 올리면 붉게 */
+    color: #8C1515;
+  }
+
+  /* [3] ⭐ 모션 푸터 애니메이션 스타일 (이게 빠져 있었어요!) ⭐ */
+  #animated-footer {
+    opacity: 0;                    /* 처음엔 투명함 */
+    width: 30%;                    /* 처음엔 폭이 좁음 */
+    transform: translateY(30px);   /* 아래쪽에 숨어 있음 */
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); /* 1.2초 동안 부드럽게 펴짐 */
+    
+    /* 기존 푸터 디자인 */
+    background-color: #8C1515;
+    color: white;
+    margin: 60px auto 0 auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  /* 화면에 보일 때 적용될 클래스 */
+  #animated-footer.show {
+    opacity: 1;           /* 선명해짐 */
+    width: 100%;          /* 화면 꽉 채움 */
+    transform: translateY(0); /* 제자리로 올라옴 */
   }
 </style>
 </head>
@@ -83,10 +106,12 @@
       <br>
       
       <br>
-      <h3>Course Listing</h3> <details>
-        <summary>Fall 2025 (Click here)</summary>
+      <h3>Course Listing</h3> 
+      <details>
+        <summary>👉 Fall 2025 (Click here)</summary>
         
-        <br> <table border="1" style="border-collapse: collapse; width: 90%;">
+        <br> 
+        <table border="1" style="border-collapse: collapse; width: 90%;">
           <thead>
             <tr style="background-color: #f2f2f2;">
               <th style="padding: 8px; text-align: left;">Course Title</th>
@@ -138,9 +163,9 @@
 
     </td>
   </tr>
+</table>
 
 <br><br>
-</table>
 
 <div id="animated-footer">
   
@@ -165,7 +190,7 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show'); // 화면에 보이면 'show' 클래스 추가
+        entry.target.classList.add('show'); // 화면에 보이면 'show' 클래스 추가 (애니메이션 시작!)
       }
     });
   });
